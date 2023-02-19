@@ -1,4 +1,4 @@
-'''Main file of the project.'''
+'''Main file of the project'''
 import argparse
 from functions import read_dataset, get_films
 
@@ -22,7 +22,7 @@ path_to_dataset = args.path_to_dataset
 
 
 def main():
-    '''Main function of the project.'''
+    '''Main function'''
     data = read_dataset(path_to_dataset)
     film_dict = get_films(data)
     print(film_dict[year])
