@@ -29,6 +29,8 @@ def main():
     film_dict = get_films_years(data)
     coords = pick_10_closest(get_coordinates(data, film_dict, year), latitude, longitude)
     map = folium.Map(location=[latitude, longitude])
+    map.add_child(folium.Marker(location=[latitude, longitude], popup='User location',
+                                icon=folium.Icon(color='red')))
     for coord in coords:
         map.add_child(folium.Marker(location=[coord[0], coord[1]], popup=coord[2]))
     map.save('map.html')
